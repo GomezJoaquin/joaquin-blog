@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _1551f5e9 = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
-const _59ad8fbe = () => interopDefault(import('../pages/home/about.vue' /* webpackChunkName: "pages/home/about" */))
-const _7985453e = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _2384c5c2 = () => interopDefault(import('../pages/blog/author/_author.vue' /* webpackChunkName: "pages/blog/author/_author" */))
-const _d4e35a2e = () => interopDefault(import('../pages/blog/tag/_tag.vue' /* webpackChunkName: "pages/blog/tag/_tag" */))
-const _139b54a1 = () => interopDefault(import('../pages/blog/_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
+const _3af230a8 = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
+const _bf43ac38 = () => interopDefault(import('../pages/home/about.vue' /* webpackChunkName: "pages/home/about" */))
+const _529b059b = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _1a0e1288 = () => interopDefault(import('../pages/blog/author/_author.vue' /* webpackChunkName: "pages/blog/author/_author" */))
+const _8c7f3374 = () => interopDefault(import('../pages/blog/tag/_tag.vue' /* webpackChunkName: "pages/blog/tag/_tag" */))
+const _3e5f7338 = () => interopDefault(import('../pages/blog/_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
 
 const emptyFn = () => {}
 
@@ -24,27 +24,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/blog",
-    component: _1551f5e9,
+    component: _3af230a8,
     name: "blog"
   }, {
     path: "/home/about",
-    component: _59ad8fbe,
+    component: _bf43ac38,
     name: "home-about"
   }, {
     path: "/",
-    component: _7985453e,
+    component: _529b059b,
     name: "index"
   }, {
     path: "/blog/author/:author?",
-    component: _2384c5c2,
+    component: _1a0e1288,
     name: "blog-author-author"
   }, {
     path: "/blog/tag/:tag?",
-    component: _d4e35a2e,
+    component: _8c7f3374,
     name: "blog-tag-tag"
   }, {
     path: "/blog/:slug",
-    component: _139b54a1,
+    component: _3e5f7338,
     name: "blog-slug"
   }],
 

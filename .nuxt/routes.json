@@ -2,43 +2,43 @@
   {
     "name": "blog",
     "path": "/blog",
-    "component": "/home/joaquin/joaquin-blog/joaquin-blog/pages/blog/index.vue",
+    "component": "/home/joaquin/code/joaquin-blog/pages/blog/index.vue",
     "chunkName": "pages/blog/index",
-    "_name": "_1551f5e9"
+    "_name": "_3af230a8"
   },
   {
     "name": "home-about",
     "path": "/home/about",
-    "component": "/home/joaquin/joaquin-blog/joaquin-blog/pages/home/about.vue",
+    "component": "/home/joaquin/code/joaquin-blog/pages/home/about.vue",
     "chunkName": "pages/home/about",
-    "_name": "_59ad8fbe"
+    "_name": "_bf43ac38"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/joaquin/joaquin-blog/joaquin-blog/pages/index.vue",
+    "component": "/home/joaquin/code/joaquin-blog/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_7985453e"
+    "_name": "_529b059b"
   },
   {
     "name": "blog-author-author",
     "path": "/blog/author/:author?",
-    "component": "/home/joaquin/joaquin-blog/joaquin-blog/pages/blog/author/_author.vue",
+    "component": "/home/joaquin/code/joaquin-blog/pages/blog/author/_author.vue",
     "chunkName": "pages/blog/author/_author",
-    "_name": "_2384c5c2"
+    "_name": "_1a0e1288"
   },
   {
     "name": "blog-tag-tag",
     "path": "/blog/tag/:tag?",
-    "component": "/home/joaquin/joaquin-blog/joaquin-blog/pages/blog/tag/_tag.vue",
+    "component": "/home/joaquin/code/joaquin-blog/pages/blog/tag/_tag.vue",
     "chunkName": "pages/blog/tag/_tag",
-    "_name": "_d4e35a2e"
+    "_name": "_8c7f3374"
   },
   {
     "name": "blog-slug",
     "path": "/blog/:slug",
-    "component": "/home/joaquin/joaquin-blog/joaquin-blog/pages/blog/_slug.vue",
+    "component": "/home/joaquin/code/joaquin-blog/pages/blog/_slug.vue",
     "chunkName": "pages/blog/_slug",
-    "_name": "_139b54a1"
+    "_name": "_3e5f7338"
   }
 ]
