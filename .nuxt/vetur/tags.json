@@ -5,9 +5,6 @@
   "PrevNext": {
     "description": "Auto imported from components/global/PrevNext.vue"
   },
-  "AppCard": {
-    "description": "Auto imported from components/AppCard.vue"
-  },
   "AppSearchInput": {
     "description": "Auto imported from components/AppSearchInput.vue"
   },

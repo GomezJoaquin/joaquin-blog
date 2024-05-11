@@ -5,12 +5,12 @@
     <h1 class="font-bold text-4xl mb-8 text-center">Artículos</h1>
     <div class="flex flex-wrap justify-center">
       <div v-for="article in articles" :key="article.slug" class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-8">
-        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }" class="block transition duration-300 ease-in-out transform hover:scale-105">
+        <NuxtLink v-if="article.slug" :to="{ name: 'blog-slug', params: { slug: article.slug } }" class="block transition duration-300 ease-in-out transform hover:scale-105">
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <img v-if="article.img" :src="article.img" alt="Article image" class="w-full h-48 object-cover">
             <div class="p-4">
               <h2 class="font-bold text-lg mb-2">{{ article.title }}</h2>
-              <p class="text-sm text-gray-600 mb-2">by {{ article.author.name }}</p>
+              <p class="text-sm text-gray-600 mb-2" v-if="article.author">by {{ article.author.name }}</p>
               <p class="text-gray-700 text-sm">{{ article.description }}</p>
             </div>
           </div>

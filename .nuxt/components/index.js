@@ -1,6 +1,5 @@
 export { default as InfoBox } from '../../components/global/InfoBox.vue'
 export { default as PrevNext } from '../../components/global/PrevNext.vue'
-export { default as AppCard } from '../../components/AppCard.vue'
 export { default as AppSearchInput } from '../../components/AppSearchInput.vue'
 export { default as Author } from '../../components/Author.vue'
 export { default as Logo } from '../../components/Logo.vue'

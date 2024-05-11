@@ -8,7 +8,6 @@ You can directly use them in pages and other components without the need to impo
 
 - `<InfoBox>` | `<info-box>` (components/global/InfoBox.vue)
 - `<PrevNext>` | `<prev-next>` (components/global/PrevNext.vue)
-- `<AppCard>` | `<app-card>` (components/AppCard.vue)
 - `<AppSearchInput>` | `<app-search-input>` (components/AppSearchInput.vue)
 - `<Author>` | `<author>` (components/Author.vue)
 - `<Logo>` | `<logo>` (components/Logo.vue)
