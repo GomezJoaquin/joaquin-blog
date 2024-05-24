@@ -8,6 +8,9 @@ export default {
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
    */
+  router: {
+    base: "/joaquin-blog/",
+  },
   head: {
     title: process.env.npm_package_name || "",
     meta: [
@@ -48,6 +51,7 @@ export default {
   modules: [
     // Doc: https://github.com/nuxt/content
     "@nuxt/content",
+    "@nuxtjs/color-mode",
   ],
   /*
    ** Content module configuration
@@ -67,3 +71,9 @@ export default {
    */
   build: {},
 };
+
+
+
+
+
+

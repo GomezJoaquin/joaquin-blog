@@ -32,7 +32,7 @@
     </div>
     <div class="mt-8 flex justify-center">
       <div class="lg:w-3/4">
-        <router-link to="/" class="text-blue-500 font-bold hover:underline">← Volver a todos los artículos</router-link>
+        <router-link to="/blog" class="text-blue-500 font-bold hover:underline">← Volver a todos los artículos</router-link>
       </div>
     </div>
   </div>

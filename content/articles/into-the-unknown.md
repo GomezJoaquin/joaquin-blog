@@ -9,6 +9,7 @@ author:
   img: images/camino.jpeg
 tags:
   - web development
+  - reflexiones
 ---
 
 ## Hello this article explores the unknown

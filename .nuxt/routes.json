@@ -7,6 +7,13 @@
     "_name": "_3af230a8"
   },
   {
+    "name": "contact",
+    "path": "/contact",
+    "component": "/home/joaquin/code/joaquin-blog/pages/contact.vue",
+    "chunkName": "pages/contact",
+    "_name": "_0940a1a9"
+  },
+  {
     "name": "home-about",
     "path": "/home/about",
     "component": "/home/joaquin/code/joaquin-blog/pages/home/about.vue",

@@ -5,6 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _3af230a8 = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
+const _0940a1a9 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
 const _bf43ac38 = () => interopDefault(import('../pages/home/about.vue' /* webpackChunkName: "pages/home/about" */))
 const _529b059b = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 const _1a0e1288 = () => interopDefault(import('../pages/blog/author/_author.vue' /* webpackChunkName: "pages/blog/author/_author" */))
@@ -17,7 +18,7 @@ Vue.use(Router)
 
 export const routerOptions = {
   mode: 'history',
-  base: '/',
+  base: '/joaquin-blog/',
   linkActiveClass: 'nuxt-link-active',
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior,
@@ -26,6 +27,10 @@ export const routerOptions = {
     path: "/blog",
     component: _3af230a8,
     name: "blog"
+  }, {
+    path: "/contact",
+    component: _0940a1a9,
+    name: "contact"
   }, {
     path: "/home/about",
     component: _bf43ac38,
