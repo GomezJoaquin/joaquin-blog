@@ -28,7 +28,7 @@
       class="relative xs:py-8 xs:px-8 lg:py-32 lg:px-16 lg:w-1/2 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
     >
       <NuxtLink to="/"
-        ><p class="hover:underline">Back to All Articles</p></NuxtLink
+        ><p class="hover:underline">Regresar a todos los articulos</p></NuxtLink
       >
       <h3 class="mb-4 font-bold text-4xl">Articles tagged {{ tag.name }}:</h3>
       <ul>
