@@ -3,10 +3,6 @@ title: Into the unknown
 description: This is a description for this article which describes what it is about
 img: images/camino.jpeg
 alt: Hello i'm article 9
-author:
-  name: Alexandra
-  bio: All about Alexandra and where she works and what she does
-  img: images/camino.jpeg
 tags:
   - web development
   - reflexiones
