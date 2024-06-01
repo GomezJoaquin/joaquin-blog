@@ -8,9 +8,8 @@
           <p class="text-xl text-gray-300">Código | DevOps | Reflexiones</p>
         </div>
         <nav class="flex items-center space-x-6">
-          <a href="/blog" class="text-white hover:text-gray-300">Blog</a>
-          <a href="/contact" class="text-white hover:text-gray-300">Contacto</a>
-          <!-- Aquí iría el componente para cambiar el modo de color -->
+          <NuxtLink to="/blog" class="text-white hover:text-gray-300">Blog</NuxtLink>
+          <NuxtLink to="/contact" class="text-white hover:text-gray-300">Contacto</NuxtLink>
         </nav>
       </div>
     </header>
@@ -138,12 +137,4 @@ p {
   color: var(--color-primary);
 }
 
-/* Agrega estilos para enlaces externos */
-a[target="_blank"]::after {
-  content: '⧉';
-  font-size: smaller;
-  padding-left: 2px;
-}
-
-/* Resto de estilos para elementos específicos */
 </style>

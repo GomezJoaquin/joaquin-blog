@@ -10,12 +10,6 @@
           <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path :class="{'hidden': navOpen, 'block': !navOpen}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path><path :class="{'block': navOpen, 'hidden': !navOpen}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
         </button>
         <nav :class="{'flex': navOpen, 'hidden': !navOpen}" class="lg:flex lg:items-center absolute lg:relative lg:z-auto lg:shadow-none left-0 right-0 bg-white shadow-md lg:bg-transparent lg:space-x-6 p-6 lg:p-0">
-          <NuxtLink to="/blog" class="block py-2 text-lg text-gray-600 hover:text-gray-800 transition-colors duration-300 lg:bg-transparent">
-            Blog
-          </NuxtLink>
-      <!--    <NuxtLink to="/about" class="block py-2 text-lg text-gray-600 hover:text-gray-800 transition-colors duration-300 lg:bg-transparent">
-            About
-          </NuxtLink> -->
           <NuxtLink to="/contact" class="block py-2 text-lg text-gray-600 hover:text-gray-800 transition-colors duration-300 lg:bg-transparent">
             Contact
           </NuxtLink>
@@ -64,12 +58,23 @@
       </main>
 
     <!-- Footer -->
-    <footer class="text-center py-8 mt-12">
-      <p>
-        <NuxtLink to="/" class="text-gray-600 hover:text-gray-800 font-medium">
-          Joaquín Gómez Alonso
-        </NuxtLink>
+    <footer class="text-center py-4 mt-8 bg-gray-200">
+      <p class="text-gray-600 text-sm">
+        &copy; {{ new Date().getFullYear() }} Joaquín Gómez Alonso.
       </p>
+      <div class="flex justify-center mt-2">
+        <NuxtLink to="/" class="text-gray-600 hover:text-gray-800 font-medium mx-2 text-sm">
+          Inicio
+        </NuxtLink>
+        <span class="text-gray-600">|</span>
+        <NuxtLink to="/about" class="text-gray-600 hover:text-gray-800 font-medium mx-2 text-sm">
+          Acerca de mí
+        </NuxtLink>
+        <span class="text-gray-600">|</span>
+        <NuxtLink to="/contact" class="text-gray-600 hover:text-gray-800 font-medium mx-2 text-sm">
+          Contacto
+        </NuxtLink>
+      </div>
     </footer>
   </div>
 </template>
