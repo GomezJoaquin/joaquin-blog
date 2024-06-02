@@ -12,7 +12,6 @@
 
     <div class="overlay"></div>
     <div class="absolute top-32 left-32 right-32 text-white">
-      <NuxtLink to="/"><Logo /></NuxtLink>
       <div class="mt-16 -mb-3 flex flex-col text-sm">
         <div class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-full post-left">
           <h1 class="text-4xl font-bold uppercase">
