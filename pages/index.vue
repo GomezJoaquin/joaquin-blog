@@ -67,24 +67,7 @@
     </footer>
   </div>
 </template>
-<script>
-export default {
-  computed: {
-    isDarkMode() {
-      // Comprobar si $colorMode está definido para evitar errores
-      return this.$colorMode ? this.$colorMode.preference === 'dark' : false;
-    },
-  },
-  methods: {
-    toggleDarkMode() {
-      // Comprobar si $colorMode está definido antes de llamar a toggle()
-      if (this.$colorMode) {
-        this.$colorMode.toggle();
-      }
-    },
-  },
-};
-</script>
+
 <style>
 body {
   font-family: 'Inter', sans-serif;
