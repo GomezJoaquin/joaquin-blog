@@ -41,6 +41,7 @@ if (!global.fetch) { global.fetch = fetch }
 let _lastPaths = []
 let app
 let router
+let store
 
 // Try to rehydrate SSR data from window
 const NUXT = window.__NUXT__ || {}
@@ -435,6 +436,13 @@ async function render (to, from, next, renderState) {
         promises.push(promise)
       }
 
+      if (!this.isPreview && !spaFallback) {
+        // Replay store mutations, catching to avoid error page on SPA fallback
+        promises.push(this.fetchPayload(to.path).then(payload => {
+          payload.mutations.forEach(m => { this.$store.commit(m[0], m[1]) })
+        }).catch(err => null))
+      }
+
       // Check disabled page loading
       this.$loading.manual = Component.options.loading === false
 
@@ -600,6 +608,7 @@ async function mountApp (__app) {
   // Set global variables
   app = __app.app
   router = __app.router
+  store = __app.store
 
   // Create Vue instance
   const _app = new Vue(app)

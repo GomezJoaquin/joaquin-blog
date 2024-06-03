@@ -1,64 +1,61 @@
 <template>
-  <div
-    class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row"
-  >
-    <div class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-full post-left">
-      <img
-        :src="tag.img"
-        :alt="tag.name"
-        class="absolute h-full w-full object-cover"
-      />
-    </div>
+  <div class="flex flex-col min-h-screen w-full bg-white dark:bg-gray-900">
+    <div class="flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-12 text-center">
+      
+      <!-- Back Link with Icon -->
+      <NuxtLink to="/" class="flex items-center text-gray-800 dark:text-gray-100 mb-8 hover:text-blue-600 dark:hover:text-blue-400 hover:underline">
+        <svg class="mr-2 group-hover:translate-x-[-2px] transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Regresar a todos los artículos
+      </NuxtLink>
 
-    <div class="overlay"></div>
-    <div class="absolute top-32 left-32 right-32 text-white">
-      <div class="mt-16 -mb-3 flex flex-col text-sm">
-        <div class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-full post-left">
-          <h1 class="text-4xl font-bold uppercase">
-            {{ tag.name }}
-          </h1>
-          <p class="mb-4 uppercase">{{ tag.description }}</p>
+      <!-- Tag Title -->
+      <h1 class="text-5xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+        {{ tag.name }}
+      </h1>
+      <!-- Tag Description -->
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">{{ tag.description }}</p>
+      <!-- Tag Content -->
+      <nuxt-content :document="tag" class="prose dark:prose-dark mx-auto mb-12" />
+      <!-- Articles Header -->
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-10">
+        Artículos sobre {{ tag.name }}
+      </h2>
 
-          <nuxt-content :document="tag" />
-        </div>
-      </div>
-    </div>
-    <div
-      class="relative xs:py-8 xs:px-8 lg:py-32 lg:px-16 lg:w-1/2 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
-    >
-      <NuxtLink to="/"
-        ><p class="hover:underline">Regresar a todos los articulos</p></NuxtLink
-      >
-      <h3 class="mb-4 font-bold text-4xl">Articles tagged {{ tag.name }}:</h3>
-      <ul>
-        <li
-          v-for="article in articles"
-          :key="article.slug"
-          class="w-full px-2 xs:mb-6 md:mb-12 article-card"
-        >
+      <!-- Cards Container -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Article Cards -->
+        <div v-for="article in articles" :key="article.slug" class="group relative">
           <NuxtLink
             :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-            class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
+            class="block transition-shadow duration-200 ease-in-out shadow-md hover:shadow-lg rounded-lg overflow-hidden bg-white dark:bg-gray-800"
+            :aria-label="'Leer más sobre ' + article.title"
           >
-            <img
-              v-if="article.img"
-              class="h-48 xxlmin:w-1/2 xxlmax:w-full object-cover"
-              :src="article.img"
-              :alt="article.alt"
-            />
-
-            <div
-              class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full"
-            >
-              <h2 class="font-bold">{{ article.title }}</h2>
-              <p>{{ article.description }}</p>
-              <p class="font-bold text-gray-600 text-sm">
-                {{ formatDate(article.updatedAt) }}
-              </p>
+            <div class="flex flex-col md:flex-row">
+              <!-- Article Image -->
+              <img
+                v-if="article.img"
+                class="h-48 md:h-auto md:w-48 object-cover"
+                :src="article.img"
+                :alt="article.title"
+              />
+              <!-- Article Text Content -->
+              <div class="p-6">
+                <h3 class="font-semibold text-xl text-gray-800 dark:text-gray-100 mb-2">
+                  {{ article.title }}
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                  {{ article.description }}
+                </p>
+                <p class="font-medium text-gray-500 dark:text-gray-400 text-sm">
+                  {{ formatDate(article.updatedAt) }}
+                </p>
+              </div>
             </div>
           </NuxtLink>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -66,25 +63,29 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const tags = await $content('tags')
-      .where({ slug: { $contains: params.tag } })
-      .limit(1)
-      .fetch()
-    const tag = tags.length > 0 ? tags[0] : {}
-    const articles = await $content('articles')
-      .where({ tags: { $contains: tag.name } })
-      .sortBy('createdAt', 'asc')
-      .fetch()
-    return {
-      articles,
-      tag
-    }
+    const [tags, articles] = await Promise.all([
+      $content('tags').where({ slug: { $contains: params.tag } }).limit(1).fetch(),
+      $content('articles').where({ tags: { $contains: params.tag } }).sortBy('createdAt', 'asc').fetch()
+    ]);
+
+    const tag = tags.length > 0 ? tags[0] : {};
+    return { articles, tag };
   },
   methods: {
     formatDate(date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(date).toLocaleDateString('es-ES', options);
+    },
+    // La función timeSince necesitará ser implementada
+    timeSince(date) {
+      // Método para calcular el tiempo relativo, como "hace 3 días"
     }
   }
 }
 </script>
+
+<style scoped>
+.group:hover .translate-x-[-2px] {
+  transform: translateX(-2px);
+}
+</style>
