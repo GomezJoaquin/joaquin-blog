@@ -4,7 +4,7 @@
       <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-8 md:p-12 lg:p-16 max-w-2xl mx-auto">
         <div class="mb-6">
           <NuxtLink
-            to="/blog"
+            to="/"
             class="flex items-center text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" class="mr-2">
@@ -24,26 +24,16 @@
             <a href="mailto:ggomezjjoaquin@gmail.com" class="text-lg text-blue-600 dark:text-blue-400 hover:underline">ggomezjjoaquin@gmail.com</a>
           </li>
           <li>
-            <a href="https://linkedin.com/in/joaquingomezalonso" target="_blank" rel="noopener noreferrer" class="text-lg text-blue-600 dark:text-blue-400 hover:underline">Perfil de LinkedIn</a>
+            <a href="https://linkedin.com/in/joaquingomezalonso" target="_blank" rel="noopener noreferrer" class="text-lg text-blue-600 dark:text-blue-400 hover:underline"> de LinkedIn</a>
           </li>
           <li>
-            <a href="https://github.com/GomezJoaquin" target="_blank" rel="noopener noreferrer" class="text-lg text-blue-600 dark:text-blue-400 hover:underline">Perfil de GitHub</a>
+            <a href="https://github.com/GomezJoaquin" target="_blank" rel="noopener noreferrer" class="text-lg text-blue-600 dark:text-blue-400 hover:underline">GitHub</a>
           </li>
           <li>
-            <a href="https://instagram.com/joaquingomez_070" target="_blank" rel="noopener noreferrer" class="text-lg text-blue-600 dark:text-blue-400 hover:underline">Perfil de Instagram</a>
+            <a href="https://instagram.com/joaquingomez_070" target="_blank" rel="noopener noreferrer" class="text-lg text-blue-600 dark:text-blue-400 hover:underline">Instagram</a>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  methods: {
-    goBack() {
-      this.$router.go(-1);
-    },
-  },
-};
-</script>
