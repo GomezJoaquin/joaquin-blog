@@ -1,5 +1,5 @@
 import Vue from 'vue'
-
+import Vuex from 'vuex'
 import Meta from 'vue-meta'
 import ClientOnly from 'vue-client-only'
 import NoSsr from 'vue-no-ssr'
@@ -9,12 +9,13 @@ import NuxtError from './components/nuxt-error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
+import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_6d86f7ca from 'nuxt_plugin_plugin_6d86f7ca' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_pluginclient_1e58ca17 from 'nuxt_plugin_pluginclient_1e58ca17' // Source: ./content/plugin.client.js (mode: 'client')
-import nuxt_plugin_pluginserver_f7db88c2 from 'nuxt_plugin_pluginserver_f7db88c2' // Source: ./content/plugin.server.js (mode: 'server')
+import nuxt_plugin_plugin_1c34c254 from 'nuxt_plugin_plugin_1c34c254' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_pluginclient_43300f52 from 'nuxt_plugin_pluginclient_43300f52' // Source: ./content/plugin.client.js (mode: 'client')
+import nuxt_plugin_pluginserver_ae2cfe4c from 'nuxt_plugin_pluginserver_ae2cfe4c' // Source: ./content/plugin.server.js (mode: 'server')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -56,9 +57,26 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 
 const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
+const originalRegisterModule = Vuex.Store.prototype.registerModule
+
+function registerModule (path, rawModule, options = {}) {
+  const preserveState = process.client && (
+    Array.isArray(path)
+      ? !!path.reduce((namespacedState, path) => namespacedState && namespacedState[path], this.state)
+      : path in this.state
+  )
+  return originalRegisterModule.call(this, path, rawModule, { preserveState, ...options })
+}
+
 async function createApp(ssrContext, config = {}) {
-  const store = null
+  const store = createStore(ssrContext)
   const router = await createRouter(ssrContext, config, { store })
+
+  // Add this.$router into store actions/mutations
+  store.$router = router
+
+  // Fix SSR caveat https://github.com/nuxt/nuxt.js/issues/3757#issuecomment-414689141
+  store.registerModule = registerModule
 
   // Create Root instance
 
@@ -67,6 +85,7 @@ async function createApp(ssrContext, config = {}) {
   const app = {
     head: {"title":"nuxt-content-article","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"The [content module](https:\u002F\u002Fcontent.nuxtjs.org\u002F) is a git files based headless CMS that provides powerful features when it comes to write blogs, documentation sites or just adding content to any regular website. In this post we will go through most of the benefits of this module and discover how we can create a blog with it."}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
+    store,
     router,
     nuxt: {
       defaultTransition,
@@ -111,6 +130,9 @@ async function createApp(ssrContext, config = {}) {
     ...App
   }
 
+  // Make app available into store via this.app
+  store.app = app
+
   const next = ssrContext ? ssrContext.next : location => app.router.push(location)
   // Resolve route
   let route
@@ -123,6 +145,7 @@ async function createApp(ssrContext, config = {}) {
 
   // Set context to app.context
   await setContext(app, {
+    store,
     route,
     next,
     error: app.nuxt.error.bind(app),
@@ -150,6 +173,9 @@ async function createApp(ssrContext, config = {}) {
       app.context[key] = value
     }
 
+    // Add into store
+    store[key] = app[key]
+
     // Check if plugin not already installed
     const installKey = '__nuxt_' + key + '_installed__'
     if (Vue[installKey]) {
@@ -171,6 +197,13 @@ async function createApp(ssrContext, config = {}) {
   // Inject runtime config as $config
   inject('config', config)
 
+  if (process.client) {
+    // Replace store state before plugins execution
+    if (window.__NUXT__ && window.__NUXT__.state) {
+      store.replaceState(window.__NUXT__.state)
+    }
+  }
+
   // Add enablePreview(previewData = {}) in context for plugins
   if (process.static && process.client) {
     app.context.enablePreview = function (previewData = {}) {
@@ -180,16 +213,16 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_6d86f7ca === 'function') {
-    await nuxt_plugin_plugin_6d86f7ca(app.context, inject)
+  if (typeof nuxt_plugin_plugin_1c34c254 === 'function') {
+    await nuxt_plugin_plugin_1c34c254(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_pluginclient_1e58ca17 === 'function') {
-    await nuxt_plugin_pluginclient_1e58ca17(app.context, inject)
+  if (process.client && typeof nuxt_plugin_pluginclient_43300f52 === 'function') {
+    await nuxt_plugin_pluginclient_43300f52(app.context, inject)
   }
 
-  if (process.server && typeof nuxt_plugin_pluginserver_f7db88c2 === 'function') {
-    await nuxt_plugin_pluginserver_f7db88c2(app.context, inject)
+  if (process.server && typeof nuxt_plugin_pluginserver_ae2cfe4c === 'function') {
+    await nuxt_plugin_pluginserver_ae2cfe4c(app.context, inject)
   }
 
   // Lock enablePreview in context
@@ -228,6 +261,7 @@ async function createApp(ssrContext, config = {}) {
   })
 
   return {
+    store,
     app,
     router
   }

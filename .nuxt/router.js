@@ -4,13 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _8a2c738c = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
-const _7d06fddb = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
-const _78c10872 = () => interopDefault(import('../pages/home/about.vue' /* webpackChunkName: "pages/home/about" */))
-const _644ec64d = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _cca6d024 = () => interopDefault(import('../pages/blog/author/_author.vue' /* webpackChunkName: "pages/blog/author/_author" */))
-const _596d5610 = () => interopDefault(import('../pages/blog/tag/_tag.vue' /* webpackChunkName: "pages/blog/tag/_tag" */))
-const _8d99b61c = () => interopDefault(import('../pages/blog/_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
+const _177f6d96 = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
+const _1ec0d4c0 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
+const _9bd0e926 = () => interopDefault(import('../pages/home/about.vue' /* webpackChunkName: "pages/home/about" */))
+const _7beb1272 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _508a3f53 = () => interopDefault(import('../pages/blog/author/_author.vue' /* webpackChunkName: "pages/blog/author/_author" */))
+const _4dbdac1d = () => interopDefault(import('../pages/blog/tag/_tag.vue' /* webpackChunkName: "pages/blog/tag/_tag" */))
+const _1aecb026 = () => interopDefault(import('../pages/blog/_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
 
 const emptyFn = () => {}
 
@@ -25,31 +25,31 @@ export const routerOptions = {
 
   routes: [{
     path: "/blog",
-    component: _8a2c738c,
+    component: _177f6d96,
     name: "blog"
   }, {
     path: "/contact",
-    component: _7d06fddb,
+    component: _1ec0d4c0,
     name: "contact"
   }, {
     path: "/home/about",
-    component: _78c10872,
+    component: _9bd0e926,
     name: "home-about"
   }, {
     path: "/",
-    component: _644ec64d,
+    component: _7beb1272,
     name: "index"
   }, {
     path: "/blog/author/:author?",
-    component: _cca6d024,
+    component: _508a3f53,
     name: "blog-author-author"
   }, {
     path: "/blog/tag/:tag?",
-    component: _596d5610,
+    component: _4dbdac1d,
     name: "blog-tag-tag"
   }, {
     path: "/blog/:slug",
-    component: _8d99b61c,
+    component: _1aecb026,
     name: "blog-slug"
   }],
 

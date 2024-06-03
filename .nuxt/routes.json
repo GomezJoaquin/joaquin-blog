@@ -2,50 +2,50 @@
   {
     "name": "blog",
     "path": "/blog",
-    "component": "/home/joaquin/Source/joaquin-blog/pages/blog/index.vue",
+    "component": "/home/joaquin/Sources/joaquin-blog/pages/blog/index.vue",
     "chunkName": "pages/blog/index",
-    "_name": "_8a2c738c"
+    "_name": "_177f6d96"
   },
   {
     "name": "contact",
     "path": "/contact",
-    "component": "/home/joaquin/Source/joaquin-blog/pages/contact.vue",
+    "component": "/home/joaquin/Sources/joaquin-blog/pages/contact.vue",
     "chunkName": "pages/contact",
-    "_name": "_7d06fddb"
+    "_name": "_1ec0d4c0"
   },
   {
     "name": "home-about",
     "path": "/home/about",
-    "component": "/home/joaquin/Source/joaquin-blog/pages/home/about.vue",
+    "component": "/home/joaquin/Sources/joaquin-blog/pages/home/about.vue",
     "chunkName": "pages/home/about",
-    "_name": "_78c10872"
+    "_name": "_9bd0e926"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/joaquin/Source/joaquin-blog/pages/index.vue",
+    "component": "/home/joaquin/Sources/joaquin-blog/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_644ec64d"
+    "_name": "_7beb1272"
   },
   {
     "name": "blog-author-author",
     "path": "/blog/author/:author?",
-    "component": "/home/joaquin/Source/joaquin-blog/pages/blog/author/_author.vue",
+    "component": "/home/joaquin/Sources/joaquin-blog/pages/blog/author/_author.vue",
     "chunkName": "pages/blog/author/_author",
-    "_name": "_cca6d024"
+    "_name": "_508a3f53"
   },
   {
     "name": "blog-tag-tag",
     "path": "/blog/tag/:tag?",
-    "component": "/home/joaquin/Source/joaquin-blog/pages/blog/tag/_tag.vue",
+    "component": "/home/joaquin/Sources/joaquin-blog/pages/blog/tag/_tag.vue",
     "chunkName": "pages/blog/tag/_tag",
-    "_name": "_596d5610"
+    "_name": "_4dbdac1d"
   },
   {
     "name": "blog-slug",
     "path": "/blog/:slug",
-    "component": "/home/joaquin/Source/joaquin-blog/pages/blog/_slug.vue",
+    "component": "/home/joaquin/Sources/joaquin-blog/pages/blog/_slug.vue",
     "chunkName": "pages/blog/_slug",
-    "_name": "_8d99b61c"
+    "_name": "_1aecb026"
   }
 ]
