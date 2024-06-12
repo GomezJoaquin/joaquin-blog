@@ -10,11 +10,11 @@ Bienvenido al repositorio de mi blog personal, en donde comparto mis pensamiento
 
 ## Tecnologías Utilizadas
 
-Este blog está construido utilizando [Nuxt.js](https://nuxtjs.org/), una potente framework para crear aplicaciones con [Vue.js](https://vuejs.org/). Los estilos están hechos con [Tailwind CSS](https://tailwindcss.com/), y el contenido está gestionado por [@nuxt/content](https://www.nuxtjs.org/docs/2.x/content).
+Este blog está construido utilizando [Nuxt.js](https://nuxtjs.org/), un potente framework para crear aplicaciones con [Vue.js](https://vuejs.org/). Los estilos están hechos con [Tailwind CSS](https://tailwindcss.com/), y el contenido está gestionado por [@nuxt/content](https://www.nuxtjs.org/docs/2.x/content).
 
 ## Vista Previa
 
-Puedes ver el blog en vivo aquí: [https://gomezjoaquin.github.io/joaquin-blog/](https://gomezjoaquin.github.io/joaquin-blog/).
+Puedes ver el blog en linea aquí: [https://gomezjoaquin.github.io/joaquin-blog/](https://gomezjoaquin.github.io/joaquin-blog/).
 
 ## Despliegue Local
 
