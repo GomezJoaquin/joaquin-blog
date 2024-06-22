@@ -1,0 +1,41 @@
+{
+  "entry": "server.js",
+  "files": {
+    "components/app-search-input.js": "components/app-search-input.js",
+    "components/author.js": "components/author.js",
+    "components/hero.js": "components/hero.js",
+    "components/info-box.js": "components/info-box.js",
+    "components/logo.js": "components/logo.js",
+    "components/prev-next.js": "components/prev-next.js",
+    "components/the-footer.js": "components/the-footer.js",
+    "components/the-header.js": "components/the-header.js",
+    "pages/about.js": "pages/about.js",
+    "pages/blog/_slug.js": "pages/blog/_slug.js",
+    "pages/blog/author/_author.js": "pages/blog/author/_author.js",
+    "pages/blog/index.js": "pages/blog/index.js",
+    "pages/blog/tag/_tag.js": "pages/blog/tag/_tag.js",
+    "pages/contact.js": "pages/contact.js",
+    "pages/home/about.js": "pages/home/about.js",
+    "pages/index.js": "pages/index.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "components/app-search-input.js": "components/app-search-input.js.map",
+    "components/author.js": "components/author.js.map",
+    "components/hero.js": "components/hero.js.map",
+    "components/info-box.js": "components/info-box.js.map",
+    "components/logo.js": "components/logo.js.map",
+    "components/prev-next.js": "components/prev-next.js.map",
+    "components/the-footer.js": "components/the-footer.js.map",
+    "components/the-header.js": "components/the-header.js.map",
+    "pages/about.js": "pages/about.js.map",
+    "pages/blog/_slug.js": "pages/blog/_slug.js.map",
+    "pages/blog/author/_author.js": "pages/blog/author/_author.js.map",
+    "pages/blog/index.js": "pages/blog/index.js.map",
+    "pages/blog/tag/_tag.js": "pages/blog/tag/_tag.js.map",
+    "pages/contact.js": "pages/contact.js.map",
+    "pages/home/about.js": "pages/home/about.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "server.js": "server.js.map"
+  }
+}

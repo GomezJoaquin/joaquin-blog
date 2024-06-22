@@ -1,0 +1,47 @@
+{
+  "name": "nuxt-content-article",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint-staged": "lint-staged",
+    "postinstall": "husky install",
+    "deploy": "gh-pages -d dist -b gh-pages"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.11.1",
+    "@nuxtjs/svg": "^0.4.1",
+    "@tailwindcss/typography": "^0.5.13",
+    "install": "^0.13.0",
+    "nuxt": "^2.14.12",
+    "prism-themes": "1.5.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/color-mode": "^3.4.1",
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/stylelint-module": "4.0.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "babel-eslint": "10.1.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "gh-pages": "^6.1.1",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.0.0",
+    "stylelint": "13.8.0",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-standard": "20.0.0"
+  }
+}
