@@ -24,7 +24,7 @@
             <a href="mailto:ggomezjjoaquin@gmail.com" class="text-lg text-blue-600 dark:text-blue-400 hover:underline">ggomezjjoaquin@gmail.com</a>
           </li>
           <li>
-            <a href="https://linkedin.com/in/joaquingomezalonso" target="_blank" rel="noopener noreferrer" class="text-lg text-blue-600 dark:text-blue-400 hover:underline"> de LinkedIn</a>
+            <a href="https://linkedin.com/in/joaquingomezalonso" target="_blank" rel="noopener noreferrer" class="text-lg text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a>
           </li>
           <li>
             <a href="https://github.com/GomezJoaquin" target="_blank" rel="noopener noreferrer" class="text-lg text-blue-600 dark:text-blue-400 hover:underline">GitHub</a>

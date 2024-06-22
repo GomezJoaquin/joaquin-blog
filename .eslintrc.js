@@ -10,8 +10,6 @@ module.exports = {
   parserOptions: {
     parser: "babel-eslint",
   },
-  rules: {
-    // Personaliza tus reglas aquí
-  },
+
 };
 
