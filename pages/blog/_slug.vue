@@ -3,20 +3,20 @@
     <div class="container mx-auto px-4 py-8">
       <div class="flex justify-center">
         <div class="w-full lg:w-3/4">
-          <h1 class="text-3xl lg:text-4xl font-bold mb-4">{{ article.title }}</h1>
+          <h1 class="text-4xl font-bold mb-6">{{ article.title }}</h1>
           <div class="flex items-center mb-4 text-sm text-gray-500 dark:text-gray-400">
             <p>{{ formatDate(article.updatedAt) }}</p>
             <span class="mx-2">•</span>
-            <span v-for="(tag, id) in article.tags" :key="id" class="px-3 py-1 mr-2 mb-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs">
+            <span v-for="(tag, id) in article.tags" :key="id" class="px-3 py-1 mr-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs">
               <router-link :to="`/blog/tag/${tags[tag].slug}`">{{ tags[tag].name }}</router-link>
             </span>
           </div>
-          <p class="text-base mb-4">{{ article.description }}</p>
+          <p class="text-lg mb-6">{{ article.description }}</p>
           <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Última actualización: {{ formatDate(article.updatedAt) }}</p>
           <nav class="mb-6">
             <ul>
               <li v-for="link in article.toc" :key="link.id" :class="{ 'font-semibold': link.depth === 2 }">
-                <router-link :to="`#${link.id}`" class="hover:underline text-gray-700 dark:text-gray-300 py-2" :class="{ 'ml-2 pb-2': link.depth === 3 }">{{ link.text }}</router-link>
+                <router-link :to="`#${link.id}`" class="hover:underline text-gray-700 dark:text-gray-300 py-2" :class="{ 'ml-4': link.depth === 3 }">{{ link.text }}</router-link>
               </li>
             </ul>
           </nav>
@@ -57,3 +57,26 @@ export default {
 }
 </script>
 
+<style>
+.prose h1 {
+  color: inherit; 
+  font-size: 2.25rem; 
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+.prose h2 {
+  color: inherit;
+  font-size: 1.75rem; 
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+.prose h3 {
+  color: inherit;
+  font-size: 1.5rem; 
+  font-weight: 500;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+</style>
