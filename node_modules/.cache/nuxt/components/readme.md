@@ -10,6 +10,7 @@ You can directly use them in pages and other components without the need to impo
 - `<PrevNext>` | `<prev-next>` (components/global/PrevNext.vue)
 - `<AppSearchInput>` | `<app-search-input>` (components/AppSearchInput.vue)
 - `<Author>` | `<author>` (components/Author.vue)
+- `<Hero>` | `<hero>` (components/Hero.vue)
 - `<Logo>` | `<logo>` (components/Logo.vue)
 - `<TheFooter>` | `<the-footer>` (components/TheFooter.vue)
 - `<TheHeader>` | `<the-header>` (components/TheHeader.vue)
