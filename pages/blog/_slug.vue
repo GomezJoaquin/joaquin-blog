@@ -58,24 +58,23 @@ export default {
 </script>
 
 <style>
-/* Estilos para h1, h2, h3 en prose */
 .prose h1 {
-  color: inherit; /* Usa el color heredado del tema */
-  font-size: 2.25rem; /* Tamaño de fuente para h1 */
+  color: inherit; 
+  font-size: 2.25rem; 
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0.5em;
 }
 .prose h2 {
   color: inherit;
-  font-size: 1.75rem; /* Tamaño de fuente para h2 */
+  font-size: 1.75rem; 
   font-weight: 600;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
 .prose h3 {
   color: inherit;
-  font-size: 1.5rem; /* Tamaño de fuente para h3 */
+  font-size: 1.5rem; 
   font-weight: 500;
   margin-top: 2em;
   margin-bottom: 0.5em;
