@@ -1,0 +1,9 @@
+HTTP request sent, awaiting response... 200 OK
+Length: 512 [binary/octet-stream]
+Saving to: ‘/home/joaquin/.cache/trunk/cli/tmp.vmemJBIrtb/launcher/latest’
+
+     0K                                                       100%  514M=0s
+
+utime(/home/joaquin/.cache/trunk/cli/tmp.vmemJBIrtb/launcher/latest): No such file or directory
+2024-07-12 01:05:55 (514 MB/s) - ‘/home/joaquin/.cache/trunk/cli/tmp.vmemJBIrtb/launcher/latest’ saved [512/512]
+

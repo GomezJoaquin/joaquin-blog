@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{326:function(e,o,t){"use strict";t.r(o);definePageMeta({colorMode:"light"});var l={colorMode:"light"},n=t(49),component=Object(n.a)(l,(function(){return(0,this._self._c)("h1",[this._v("This page is forced with light mode")])}),[],!1,null,null,null);o.default=component.exports}}]);
